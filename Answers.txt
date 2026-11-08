@@ -1,0 +1,17 @@
+1. The nextId has to be static since every new account needs a new id so keeping a shared counter for the entire class to remember where we stopped would solve it and that's what static makes sure to do
+
+2. If it were a normal variable then each new account would start with its own id (from 1000 all over again) thus creating another account that won't know an id like 1000 was already taken and every account would end up with the same startoing id
+
+3. It isnt static because as we said static belongs to the whole class not one account and when we deposit we need to check and add money to the balance of a specific acount
+
+4. no because we already know each account holds its own balance so a static function without an object cant ever know which account's balance to touch
+
+5. Yes because a regular function runs on an existing account and any account can still reach the static variables in the class (like the constructor usege of nextid)
+
+6. Because every user can just alter it without any problem and set his or others' balance to whatever he wants thus breaking the system (skip checks like for negative amounts or closed accounts).
+
+adding a public setBalance function would undo the private property and let outside code overwrite the money directly instead of going through deposit or withdraw
+
+8. Yes because each account keeps its private balance in the memory while nextId is just the shared class counter waiting for the next new account 
+
+9. The object unlike String contains the actual account and its functions so returning the object would allow it so the one who called it cab directly use those functions on it whereas with string only the text we built in getAccountInfo will appear
